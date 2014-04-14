@@ -10,6 +10,17 @@
 #include <stdio.h>
 #include <tchar.h>
 
+//include the whole world
+#include <vector>
+#include <string>
+
+class Temp
+{
+public:
+	Temp();
+private:
+	int erature;
+};
 
 
 // TODO: reference additional headers your program requires here
