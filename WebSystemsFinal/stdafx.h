@@ -11,5 +11,12 @@
 #include <tchar.h>
 
 
+class temp{
+    //this is an example
+    
+public:
+    
+};
+
 
 // TODO: reference additional headers your program requires here
