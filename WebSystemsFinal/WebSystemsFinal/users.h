@@ -19,6 +19,8 @@
 
 #include <unordered_set>
 
+#include <boost/random.hpp>
+
 class user;
 class user_set;
 
@@ -62,7 +64,7 @@ public:
     
     bool operator==(user const& u_ref)const
     {
-        return (u_ref.name_hash^u_ref.pswd_hash) == (name_hash^pswd_hash);
+        return u_ref.name_hash == name_hash ;
     }
     
     
@@ -74,7 +76,7 @@ template <>
 struct std::hash<user>
 {
     inline size_t operator()(user const& u_ref) const
-    {   return (u_ref.name_hash ^ u_ref.pswd_hash);  
+    {   return u_ref.name_hash ;  
     }
 };
 

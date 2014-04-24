@@ -18,6 +18,7 @@
 
 
 template<class ... var_t> 
+inline 
 std::string 
 stringf( const char * format, var_t ... f_args )
 {
@@ -25,7 +26,16 @@ stringf( const char * format, var_t ... f_args )
     sprintf(buf, format, f_args... );
     return std::string( buf );
 }
-
+/*
+ 
+ for example:
+ 
+        std::string str_var = stringf("He%so%cW%drld!","ll",' ',0);
+ 
+ this makes true  (str_var=="Hello W0rld!")
+ 
+ Basically, it's printf... but you get a std::string back.
+ */
 
 
 
