@@ -23,12 +23,12 @@ class security
     
 public:
     static
-    bool chk_id();
+    bool chk_id(string usrnm, string pswd);
     
     static
-    user mk_user();
+    user mk_user(string usrnm, string pswd);
     
-    void report_fake();
+    void report_fake(string usrnm, string pswd);
     
 };
 

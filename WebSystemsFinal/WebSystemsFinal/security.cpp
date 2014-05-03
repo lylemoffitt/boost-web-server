@@ -7,6 +7,7 @@
 //
 
 #include "security.h"
+#include <ctime>
 
 using namespace std;
 
@@ -20,6 +21,7 @@ bool security::chk_id(string usrnm, string pswd)
                 return true;
         i++;
     }
+    report_fake(usrnm, pswd);
     return false;
 }
     
@@ -30,7 +32,7 @@ user security::mk_user(string usrnm, string pswd)
     user_set.add_user(&obj);
 }
     
-void security::report_fake()
+void security::report_fake(string usrnm, string pswd)
 {
-    
-}
+    log("Security", 3, "\t\tFake user detected: " + usrnm + "\t" + pswd);
+} 

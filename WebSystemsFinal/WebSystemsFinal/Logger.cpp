@@ -13,34 +13,16 @@ using namespace std;
 void logger::log(std::string whom, int level, std::string info)
 {
 	stringstream ss;
-	ss << level;
-	string Level(ss.str());
-	int i = 0;
-	ifstream infile;
-	infile.open(Level);
-
-	string doc[SIZE];
-
-	while(!infile.eof)
-	{
-		infile >> doc[i];
-		i++;
-	}
-
-	infile.close();
-
 	ofstream outfile;
-
-	outfile.open(Level);
 	
-	while(i>-1)
-	{
-		outfile << doc[i];	
-	}
-	outfile << whom + info;
-
+	ss << whom << level;
+	string Level(ss.str());
+	
+	outfile.open(Level | ofstream::app);
+	
+	time ( &rawtime );
+	timeinfo = localtime ( &rawtime ); 
+	
+	outfile << asctime (timeinfo) + info << endl;
 	outfile.close();
-	
-
-
 }

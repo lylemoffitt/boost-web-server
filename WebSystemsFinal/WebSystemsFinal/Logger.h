@@ -45,7 +45,11 @@ class logger
     std::string     base_path;
     std::unordered_map<std::string, std::fstream> files;
     
+    time_t rawtime;
+    struct tm * timeinfo;
+    
     logger(){
+        
         std::fstream conf ("config");
         
     }
