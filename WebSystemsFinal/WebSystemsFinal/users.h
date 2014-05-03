@@ -91,10 +91,7 @@ struct user_set
     {
         id_table.insert( u_ref );
     }
-    
 
-    
-    
 };
 
 

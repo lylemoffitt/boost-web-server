@@ -14,6 +14,11 @@
 #include <boost/circular_buffer.hpp>
 
 
+class scheduler
+{
+    
+};
+
 
 
 #endif /* defined(__WebSystemsFinal__Scheduler__) */

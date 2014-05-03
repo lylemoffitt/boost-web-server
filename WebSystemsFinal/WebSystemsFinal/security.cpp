@@ -13,11 +13,12 @@ using namespace std;
 
 bool security::chk_id(string usrnm, string pswd)
 {
+    
     int i = 0;
-    for (const string& x: user_set) 
+    for (const string& x: all_users) 
     {
-        if(user_set.id_table[i].username == usrnm)
-            if(user_set.id_table[i].pswd_hash == str_hasher(pswd))
+        if(all_users.id_table[i].username == usrnm)
+            if(all_users.id_table[i].pswd_hash == str_hasher(pswd))
                 return true;
         i++;
     }
@@ -29,7 +30,7 @@ bool security::chk_id(string usrnm, string pswd)
 user security::mk_user(string usrnm, string pswd)
 {
     user obj = new user(usrnam, pswd);
-    user_set.add_user(&obj);
+    all_users.add_user(&obj);
 }
     
 void security::report_fake(string usrnm, string pswd)

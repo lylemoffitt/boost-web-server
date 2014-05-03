@@ -30,7 +30,7 @@ stringf( const char * format, var_t ... f_args )
  
  for example:
  
-        std::string str_var = stringf("He%so%cW%drld!","ll",' ',0);
+        std::string str_var ( stringf("He%so%cW%drld!","ll",' ',0) );
  
  this makes true  (str_var=="Hello W0rld!")
  

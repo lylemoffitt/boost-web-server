@@ -15,22 +15,28 @@
 
 #include <functional>
 
-#include "users.h"
+#include "allofit.h"
 
 
 class security
 {
+    allofit     &       _aott;
     
 public:
-    static
-    bool chk_id(string usrnm, string pswd);
     
-    static
-    user mk_user(string usrnm, string pswd);
+    security(allofit & _all):_aott(_all)
+    {}
     
-    void report_fake(string usrnm, string pswd);
+    
+    
+    bool chk_id(std::string usrnm, std::string pswd);
+    
+    user mk_user(std::string usrnm, std::string pswd);
+    
+    void report_fake(std::string usrnm, std::string pswd);
     
 };
 
 
 #endif /* defined(__WebSystemsFinal__security__) */
+
