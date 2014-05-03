@@ -14,12 +14,12 @@
 //#include <map>
 #include <string>
 #include <functional>
-
 #include <queue>
-
 #include <unordered_set>
 
 #include <boost/random.hpp>
+
+#include <mutex>
 
 class user;
 class user_set;
@@ -32,11 +32,14 @@ class user
 {
     // Dynamic information
     double          priority;
+    bool            busy;//mutex for priority
     
     std::chrono::time_point<std::chrono::system_clock> last_login;
     
-    bool            busy;//mutex for priority
+    
+    
     friend          user_set;
+    
 public:
     //Ststic information
     const 
@@ -60,6 +63,7 @@ public:
     }
     
     double  get_prio();
+    
     void    set_prio(double val);
     
     bool operator==(user const& u_ref)const

@@ -9,13 +9,14 @@
 #ifndef __WebSystemsFinal__allofit__
 #define __WebSystemsFinal__allofit__
 
-#include <iostream>
 
 #include "httpServer.h"
 #include "security.h"
 #include "users.h"
 #include "Logger.h"
-#include "security.h"
+#include "Scheduler.h"
+
+
 
 struct allofit
 {

@@ -11,8 +11,7 @@
 
 #include <iostream>
 #include <string>
-#include <chrono>
-
+#include <ctime>
 #include <functional>
 
 #include "allofit.h"

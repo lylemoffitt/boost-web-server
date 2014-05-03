@@ -18,7 +18,7 @@ void logger::log(std::string whom, int level, std::string info)
 	ss << whom << level;
 	string Level(ss.str());
 	
-	outfile.open(Level | ofstream::app);
+	outfile.open(Level , ofstream::app);
 	
 	time ( &rawtime );
 	timeinfo = localtime ( &rawtime ); 

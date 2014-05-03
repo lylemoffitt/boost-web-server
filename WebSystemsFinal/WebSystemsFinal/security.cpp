@@ -7,20 +7,20 @@
 //
 
 #include "security.h"
-#include <ctime>
+
 
 using namespace std;
 
 bool security::chk_id(string usrnm, string pswd)
 {
-    
-    int i = 0;
-    for (const string& x: all_users) 
+    for (auto i = _aott._user_set.id_table.begin(); 
+         i != _aott._user_set.id_table.end(); i++) 
     {
-        if(all_users.id_table[i].username == usrnm)
-            if(all_users.id_table[i].pswd_hash == str_hasher(pswd))
+        i->
+        
+        if( (*i).username == usrnm)
+            if( (*i).pswd_hash == str_hasher(pswd))
                 return true;
-        i++;
     }
     report_fake(usrnm, pswd);
     return false;
@@ -29,8 +29,8 @@ bool security::chk_id(string usrnm, string pswd)
 
 user security::mk_user(string usrnm, string pswd)
 {
-    user obj = new user(usrnam, pswd);
-    all_users.add_user(&obj);
+    auto obj =  new user(usrnm, pswd) ;
+    _aott._user_set.add_user(*obj);
 }
     
 void security::report_fake(string usrnm, string pswd)
