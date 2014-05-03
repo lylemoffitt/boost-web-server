@@ -50,17 +50,17 @@ public:
     size_t          name_hash;
     
     
-    user(std::string _username, std::string _password):
+    user(std::string _username, std::string _password);/*:
     username(_username), pswd_hash( str_hasher(_password) ),
     name_hash( str_hasher(_username) ), busy(false)
     {
-    }
+    }*/
     
     // check that login matches
-    bool authenticate(std::string u_name, std::string u_pswd)
-    {
+    bool authenticate(std::string u_name, std::string u_pswd);
+    /*{
         return (u_name == username  &&  str_hasher(u_pswd)==pswd_hash);
-    }
+    }*/
     
     double  get_prio();
     
