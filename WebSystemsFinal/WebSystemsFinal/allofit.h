@@ -26,6 +26,10 @@ struct allofit
     
     user_set    _user_set;
     
+    logger      _logger;
+    
+    scheduler   _scheduler;
+    
 };
 
 
