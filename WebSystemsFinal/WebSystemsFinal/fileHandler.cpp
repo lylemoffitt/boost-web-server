@@ -2,7 +2,7 @@
 
 using namespace std;
 
-file_handler::file_handler(allofit &_alloi):_aott(_alloi)
+file_handler::file_handler()//(allofit &_alloi)//:_aott(_alloi)
 {
     
     ifstream infile;
@@ -49,10 +49,11 @@ int file_handler::add_file(std::string filename)
     return 1;
 }
 
-file& file_handler::get_file(std::string filename) 
+file* file_handler::get_file(std::string filename) 
 {
     unordered_map<string,file>::iterator it = file_map.find (filename);
-    return it->second;
+    if(it == file_map.end()){return nullptr;}
+    return &(it->second);
 }
 
 vector<char> file::readfile()
@@ -70,7 +71,7 @@ vector<char> file::readfile()
     }
     infile.close();
     
-    _aott._logger.log("OpenFile", 1, "\t\tFile: " + this->filename + "opened");
+    // _aott._logger.log("OpenFile", 1, "\t\tFile: " + this->filename + "opened");
     
     
     return joke;

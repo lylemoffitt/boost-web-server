@@ -11,41 +11,78 @@
 
 #include <iostream>
 #include <string> 
+#include <boost/circular_buffer.hpp>
+#include <queue>
+#include <vector>
+#include <functional>
+
+
+class allofit;
+class user;
+class user_set;
+class scheduler;
+class file_handler;
+class logger;
+
+
+#include "Logger.h"
+#include "users.h"
+
 
 
 #include "httpServer.h"
-#include "security.h"
-#include "users.h"
-#include "Logger.h"
-#include "Scheduler.h"
+
+
+//#include "security.h"
+//#include "Scheduler.h"
 #include "fileHandler.h"
 
 
+
+class box
+{
+public:
+    user*       to_user;
+    double      interval;
+    std::string filename;
+    size_t      data_sum;
+    size_t      age_time;
+    timestamp   time_point;
+    tcpConnection* tcp;
+    
+    void calcInterval();
+    size_t send_time(){return interval;}
+    
+};
 
 
 class allofit
 {
 public:
+    allofit(): _scheduler(*this),_file_handler (*this)
+    {}
+    
     tcpServer      _httpserver; //tcp server
-    
-    security        _security (*this);
-    
+        
     user_set        _user_set;
     
     logger          _logger;
     
-    scheduler       _scheduler(*this);
+    file_handler    _file_handler;
+ 
     
-    file_handler    _file_handler (*this);
     
-};
-
-class handler
-{
-     allofit & _aott;
+    boost::circular_buffer<box> ringBuffer;
+    double highest, lowest, median;
     
 public:
-    handler(allofit & _all):_aott(_all){}
+
+    
+    void add_to_sched(box &customer);
+    box take_next();
+    void update();
+    
+
     
     user* member;
     tcpConnection* tcp;
@@ -69,9 +106,17 @@ public:
     //     wait user's interval 
     // }
     // until exit
+    
+    
     void getJoke(std::string usr_pswd);
     
+    bool chk_id(std::string usrnm, std::string pswd);
     
+    user mk_user(std::string usrnm, std::string pswd);
+    
+    void report_fake(std::string usrnm, std::string pswd);
+    
+    void interrogate();
 };
 
 

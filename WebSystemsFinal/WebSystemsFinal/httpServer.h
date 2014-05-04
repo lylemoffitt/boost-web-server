@@ -9,99 +9,159 @@
 #ifndef __WebSystemsFinal__httpServer__
 #define __WebSystemsFinal__httpServer__
 
-
-
-
+#include "Poco/Net/HTTPServer.h"
+#include "Poco/Net/HTTPRequestHandler.h"
+#include "Poco/Net/HTTPRequestHandlerFactory.h"
+#include "Poco/Net/HTTPServerParams.h"
+#include "Poco/Net/HTTPServerRequest.h"
+#include "Poco/Net/HTTPServerResponse.h"
+#include "Poco/Net/HTTPServerParams.h"
+#include "Poco/Net/ServerSocket.h"
+#include "Poco/Timestamp.h"
+#include "Poco/DateTimeFormatter.h"
+#include "Poco/DateTimeFormat.h"
+#include "Poco/Exception.h"
+#include "Poco/ThreadPool.h"
+#include "Poco/Util/ServerApplication.h"
+#include "Poco/Util/Option.h"
+#include "Poco/Util/OptionSet.h"
+#include "Poco/Util/HelpFormatter.h"
 #include <iostream>
-#include <iostream>
-#include <string>
-#include <boost/asio.hpp>
 
-using boost::asio::ip::tcp;
+using Poco::Net::ServerSocket;
+using Poco::Net::HTTPRequestHandler;
+using Poco::Net::HTTPRequestHandlerFactory;
+using Poco::Net::HTTPServer;
+using Poco::Net::HTTPServerRequest;
+using Poco::Net::HTTPServerResponse;
+using Poco::Net::HTTPServerParams;
+using Poco::Timestamp;
+using Poco::DateTimeFormatter;
+using Poco::DateTimeFormat;
+using Poco::ThreadPool;
+using Poco::Util::ServerApplication;
+using Poco::Util::Application;
+using Poco::Util::Option;
+using Poco::Util::OptionSet;
+using Poco::Util::OptionCallback;
+using Poco::Util::HelpFormatter;
 
-#define PORT 8080
-
-struct other_end
+class TimeRequestHandler: public HTTPRequestHandler
 {
-    //contains everyhing needed for tcp
-    boost::asio::ip::address    addr;
-    
-    size_t          connection_number;
-};
-
-
-struct tcpConnection
-{
-    tcp::socket _socket;
-    std::string message ;
-    boost::system::error_code ignored_error;
-
-    tcpConnection(boost::asio::io_service io_serv);
-    
-    void send(){
-        boost::asio::write(socket, 
-                           boost::asio::buffer(message), 
-                           ignored_error);
+public:
+    TimeRequestHandler(const std::string& format): _format(format)
+    {
     }
     
-    bool done();
+    void handleRequest(HTTPServerRequest& request,
+                       HTTPServerResponse& response);
+    
+private:
+    std::string _format;
 };
 
 
-class tcpServer
+
+class TimeRequestHandlerFactory: public HTTPRequestHandlerFactory
 {
-    boost::asio::io_service io_service;
+public:
+    TimeRequestHandlerFactory(const std::string& format):_format(format)
+    {
+    }
     
-    tcp::acceptor acceptor;
+    HTTPRequestHandler* createRequestHandler(const HTTPServerRequest& request)
+    {
+        if (request.getURI() == "/")
+            return new TimeRequestHandler(_format);
+        else
+            return 0;
+    }
     
-    tcpServer():acceptor(io_service, 
-                         tcp::endpoint(tcp::v4(), PORT))
-    {}
-    
-
-    
-    void
-    loop();
-    
-    
+private:
+    std::string _format;
 };
 
+class HTTPTimeServer: public Poco::Util::ServerApplication
+{
+public:
+    HTTPTimeServer(): _helpRequested(false)
+    {
+    }
+    
+    ~HTTPTimeServer()
+    {
+    }
+    
+protected:
+    void initialize(Application& self)
+    {
+        loadConfiguration();
+        ServerApplication::initialize(self);
+    }
+    
+    void uninitialize()
+    {
+        ServerApplication::uninitialize();
+    }
+    
+    void defineOptions(OptionSet& options)
+    {
+        ServerApplication::defineOptions(options);
+        
+        options.addOption(
+                          Option("help", "h", "display argument help information")
+                          .required(false)
+                          .repeatable(false)
+                          .callback(OptionCallback<HTTPTimeServer>(
+                                                                   this, &HTTPTimeServer::handleHelp)));
+    }
+    
+    void handleHelp(const std::string& name, 
+                    const std::string& value)
+    {
+        HelpFormatter helpFormatter(options());
+        helpFormatter.setCommand(commandName());
+        helpFormatter.setUsage("OPTIONS");
+        helpFormatter.setHeader(
+                                "A web server that serves the current date and time.");
+        helpFormatter.format(std::cout);
+        stopOptionsProcessing();
+        _helpRequested = true;
+    }
+    
+    int main(const std::vector<std::string>& args)
+    {
+        if (!_helpRequested)
+        {
+            unsigned short port = (unsigned short)
+            config().getInt("HTTPTimeServer.port", 9980);
+            std::string format(
+                               config().getString("HTTPTimeServer.format", 
+                                                  DateTimeFormat::SORTABLE_FORMAT));
+            
+            ServerSocket svs(port);
+            HTTPServer srv(new TimeRequestHandlerFactory(format), 
+                           svs, new HTTPServerParams);
+            srv.start();
+            waitForTerminationRequest();
+            srv.stop();
+        }
+        return Application::EXIT_OK;
+    }
+    
+private:
+    bool _helpRequested;
+};
+/*
+int main(int argc, char** argv)
+{
+    HTTPTimeServer app;
+    return app.run(argc, argv);
+}
+*/
 
 #endif /* defined(__WebSystemsFinal__httpServer__) */
 
-
-
-
-
-
-
-
-int main()
-{
-    try
-    {
-        boost::asio::io_service io_service;
-        
-        tcp::acceptor acceptor(io_service, tcp::endpoint(tcp::v4(), 13));
-        
-        for (;;)
-        {
-            tcp::socket socket(io_service);
-            acceptor.accept(socket);
-            
-            std::string message = make_daytime_string();
-            
-            boost::system::error_code ignored_error;
-            boost::asio::write(socket, boost::asio::buffer(message), ignored_error);
-        }
-    }
-    catch (std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    
-    return 0;
-}
 
 
 

@@ -34,16 +34,13 @@ class logger
     std::string     base_path;
     std::unordered_map<std::string, std::fstream> files;
     
-    time_t rawtime;
-    struct tm * timeinfo;
-    
-    logger(){
-        
-        std::fstream conf ("config");
-        
-    }
+    time_t          rawtime;
+    struct tm *     timeinfo;
     
 public:
+    logger(){
+        //std::fstream conf ("config");
+    }
     
     void    log(std::string whom, int level, std::string info);
     

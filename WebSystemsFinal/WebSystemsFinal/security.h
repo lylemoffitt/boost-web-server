@@ -14,8 +14,9 @@
 #include <ctime>
 #include <functional>
 
-#include "allofit.h"
 #include "users.h"
+#include "allofit.h"
+
 
 
 class security
@@ -29,13 +30,7 @@ public:
     
     
     
-    bool chk_id(std::string usrnm, std::string pswd);
-    
-    user mk_user(std::string usrnm, std::string pswd);
-    
-    void report_fake(std::string usrnm, std::string pswd);
-    
-    void interrogate();
+
 };
 
 

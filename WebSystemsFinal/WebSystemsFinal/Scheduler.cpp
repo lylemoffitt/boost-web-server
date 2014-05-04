@@ -10,53 +10,6 @@
 
 using namespace std;
 
-void scheduler::add_to_sched(box &customer)
-{
-    customer.calcInterval();
-    ringBuffer.push_back(customer);
-}        
-
-box scheduler::take_next()
-{
-    box customer = ringBuffer.front();
-    ringBuffer.pop_front();
-    return customer;
-}    
-
-void scheduler::update()
-{
-    box customer;
-    file joke;
-    time_t rawtime;
-    struct tm * timeinfo;
-    
-    customer = ringBuffer.front();
-    ringBuffer.pop_front();
-    if(customer.tcp->done())
-    {   
-        delete &customer;
-        return;
-    }
-
-    joke = _aott._file_handler.get_file(customer.filename);
-    
-    customer. data_sum += joke.file_size;
-    
-    time ( &rawtime );
-	timeinfo = localtime ( &rawtime );
-    joke.access_time = atoi(asctime (timeinfo));
-    
-    customer.age_time += (joke.access_time - customer.time_point);
-    
-    customer.calcInterval();
-    
-}
-
-void box::calcInterval()
-{
-    interval = data_sum/age_time;
-    usleep(interval);
-}
 
 
 /*

@@ -12,12 +12,13 @@
 
 using namespace std;
 
-std::string handler::send_hello()
+std::string 
+allofit::send_hello()
 {
-    file displayFile;
+    file* displayFile;
     string usr_pswd, usr, pswd;
     
-    displayFile = _aott._file_handler.get_file("intro.md");
+    displayFile = _file_handler.get_file("intro.md");
     // TCP.writeData();
     usr_pswd = TCP.getData();
     
@@ -27,24 +28,25 @@ std::string handler::send_hello()
     pswd = usr_pswd.substr(newline+1, usr_pswd.length());
     
     bool login;
-    login = _aott._security.chk_id(usr, pswd);
+    login = chk_id(usr, pswd);
     
     if(login == false)
     {
-        _aott._security.mk_user(usr, pswd);
-        _aott._logger.log("SignUpForm", 5, "\t\tSignUpForm changed to add" + usr);
+        mk_user(usr, pswd);
+        _logger.log("SignUpForm", 5, "\t\tSignUpForm changed to add" + usr);
     }
         
-    _aott._logger.log("IntroForm", 4, "\t\tUserform changed" + usr + "signed in");
+    _logger.log("IntroForm", 4, "\t\tUserform changed" + usr + "signed in");
     
      return usr_pswd;
     
 }
 
-void handler::getJoke(std::string usr_pswd)
+void 
+allofit::getJoke(std::string usr_pswd)
 {
     box customer;
-    file displayFile;
+    file* displayFile;
     string usr, pswd;
     
     size_t newline;
@@ -54,24 +56,107 @@ void handler::getJoke(std::string usr_pswd)
     
     while(true)
     {
-        displayFile = _aott._file_handler.get_file("joke.md");
+        displayFile = _file_handler.get_file("joke.md");
     
         //reads filename for joke
-        customer.data_sum += displayFile.file_size;
-        customer.filename = displayFile.filename;
+        customer.data_sum += displayFile->file_size;
+        customer.filename = displayFile->filename;
         //customer.to_user->username = usr;
         //customer.to_user->pswd_hash = str_hasher(pswd);
         //customer.to_user->name_hash = str_hasher(usr);
-        _aott._scheduler.add_to_sched(customer);
+        add_to_sched(customer);
         usleep(customer.interval);
-        _aott._logger.log("Joke", 0,"\t\tUser " + usr + "asked for Joke");
-        displayFile = _aott._file_handler.get_file("jokeAgain.md");
+        _logger.log("Joke", 0,"\t\tUser " + usr + "asked for Joke");
+        displayFile = _file_handler.get_file("jokeAgain.md");
         if(displayFile == nullptr)
             break;
     }
 }
 
+void 
+allofit::add_to_sched(box &customer)
+{
+    customer.calcInterval();
+    ringBuffer.push_back(customer);
+}        
 
+box 
+allofit::take_next()
+{
+    box customer = ringBuffer.front();
+    ringBuffer.pop_front();
+    return customer;
+}    
+
+void 
+allofit::update()
+{
+    box customer;
+    file* joke;
+    time_t rawtime;
+    struct tm * timeinfo;
+    
+    customer = ringBuffer.front();
+    ringBuffer.pop_front();
+    if(customer.tcp->done())
+    {   
+        delete &customer;
+        return;
+    }
+    
+    joke = _file_handler.get_file(customer.filename);
+    //check for nullptr
+    customer. data_sum += joke->file_size;
+    
+    time ( &rawtime );
+	timeinfo = localtime ( &rawtime );
+    joke->access_time = atoi(asctime (timeinfo));
+    
+    customer.age_time += (joke->access_time - customer.time_point);
+    
+    customer.calcInterval();
+    
+}
+
+void 
+box::calcInterval()
+{
+    interval = data_sum/age_time;
+    usleep(interval);
+}
+
+
+
+
+bool 
+allofit::chk_id(string usrnm, string pswd)
+{
+    
+    user obj(usrnm, pswd);
+    
+    auto it = _user_set.id_table.find(obj);
+    
+    if(it == _user_set.id_table.end())
+        return false;
+    
+    return (*it).authenticate(usrnm, pswd);
+    
+}
+
+
+user 
+allofit::mk_user(string usrnm, string pswd)
+{
+    auto obj =  new user(usrnm, pswd) ;
+    _user_set.add_user(*obj);
+    return *obj;
+}
+
+void 
+allofit::report_fake(string usrnm, string pswd)
+{
+    _logger.log("Security", 3, "\t\tFake user detected: " + usrnm + "\t" + pswd);
+} 
 
 
 
