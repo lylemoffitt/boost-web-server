@@ -37,6 +37,7 @@ class box
     size_t sum;
     public:
         void calcInterval();
+        size_t send_time(){return interval}
     
 };
 #endif /* defined(__WebSystemsFinal__Scheduler__) */
