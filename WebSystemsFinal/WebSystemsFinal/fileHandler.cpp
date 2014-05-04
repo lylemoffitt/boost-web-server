@@ -69,6 +69,10 @@ vector<char> file::readfile()
         joke.push_back(letter);
     }
     infile.close();
+    
+    _logger.log("OpenFile", 1, "\t\tFile: " + this.filename + "opened");
+    
+    
     return joke;
 }
 

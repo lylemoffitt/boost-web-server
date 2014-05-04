@@ -34,6 +34,7 @@ public:
     
     void report_fake(std::string usrnm, std::string pswd);
     
+    void interrogate();
 };
 
 

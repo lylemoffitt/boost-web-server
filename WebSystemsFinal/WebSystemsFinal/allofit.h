@@ -35,6 +35,35 @@ struct allofit
 };
 
 
+class handler
+{
+    public:
+    user* member;
+    TCP* tcp;
+    // gets intro file fro file handler
+    // passes file through TCP
+    // gets response (usrnm and pswd)
+    // checks usrnm and pswd with security
+    // if correct, enter
+    // otherwise, send create user form
+    // auto create
+    // log size of intro file and signup file 
+    // sum should be updated in box in scheduler
+    // create send time in box time in scheduler
+    void send_hello();
+    // while{
+    //     sends form asking what joke they want
+    //     get joke from file handler
+    //     record
+    //     ask if another
+    //     get next joke
+    //     wait user's interval 
+    // }
+    // until exit
+};
+
+
+
 
 
 #endif /* defined(__WebSystemsFinal__allofit__) */
