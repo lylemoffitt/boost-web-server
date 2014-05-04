@@ -26,7 +26,7 @@
 class allofit
 {
 public:
-    httpServer      _httpserver; //tcp server
+    tcpServer      _httpserver; //tcp server
     
     security        _security (*this);
     
@@ -34,7 +34,7 @@ public:
     
     logger          _logger;
     
-    scheduler       _scheduler;
+    scheduler       _scheduler(*this);
     
     file_handler    _file_handler (*this);
     

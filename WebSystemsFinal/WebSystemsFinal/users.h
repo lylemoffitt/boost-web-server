@@ -87,12 +87,6 @@ struct user_set
 {
     std::unordered_set< user > id_table;
     
-//    std::unordered_set< user >::iterator
-//    find_by_usrname(std::string name) const
-//    {
-//        return id_table.find( str_hasher(name) );
-//    }
-    
     void add_user(user & u_ref)
     {
         id_table.insert( u_ref );
