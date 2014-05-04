@@ -13,6 +13,7 @@
 		2652DE6B19073B2500029954 /* users.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2652DE6919073B2500029954 /* users.cpp */; };
 		2652DE6E1907490800029954 /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2652DE6C1907490800029954 /* Logger.cpp */; };
 		2652DE71190765C200029954 /* Scheduler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2652DE6F190765C200029954 /* Scheduler.cpp */; };
+		26CE4E1319169EAD009DD720 /* fileHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26CE4E1119169EAD009DD720 /* fileHandler.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,8 @@
 		2652DE6D1907490800029954 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logger.h; path = WebSystemsFinal/Logger.h; sourceTree = "<group>"; };
 		2652DE6F190765C200029954 /* Scheduler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scheduler.cpp; path = WebSystemsFinal/Scheduler.cpp; sourceTree = "<group>"; };
 		2652DE70190765C200029954 /* Scheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scheduler.h; path = WebSystemsFinal/Scheduler.h; sourceTree = "<group>"; };
+		26CE4E1119169EAD009DD720 /* fileHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fileHandler.cpp; path = WebSystemsFinal/fileHandler.cpp; sourceTree = "<group>"; };
+		26CE4E1219169EAD009DD720 /* fileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fileHandler.h; path = WebSystemsFinal/fileHandler.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,8 @@
 		263ED901190714B600CAF5C5 = {
 			isa = PBXGroup;
 			children = (
+				26CE4E1119169EAD009DD720 /* fileHandler.cpp */,
+				26CE4E1219169EAD009DD720 /* fileHandler.h */,
 				26462D5119157C3C004C19C2 /* allofit.cpp */,
 				26462D5219157C3C004C19C2 /* allofit.h */,
 				263ED9231907166F00CAF5C5 /* httpServer.cpp */,
@@ -138,6 +143,7 @@
 				263ED9281907187A00CAF5C5 /* security.cpp in Sources */,
 				2652DE6E1907490800029954 /* Logger.cpp in Sources */,
 				2652DE71190765C200029954 /* Scheduler.cpp in Sources */,
+				26CE4E1319169EAD009DD720 /* fileHandler.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
