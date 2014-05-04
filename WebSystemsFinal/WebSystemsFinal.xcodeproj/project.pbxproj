@@ -1,0 +1,273 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		263ED9281907187A00CAF5C5 /* security.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 263ED9261907187A00CAF5C5 /* security.cpp */; };
+		26462D5319157C3C004C19C2 /* allofit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26462D5119157C3C004C19C2 /* allofit.cpp */; };
+		2652DE681907394300029954 /* httpServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 263ED9231907166F00CAF5C5 /* httpServer.cpp */; };
+		2652DE6B19073B2500029954 /* users.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2652DE6919073B2500029954 /* users.cpp */; };
+		2652DE6E1907490800029954 /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2652DE6C1907490800029954 /* Logger.cpp */; };
+		2652DE71190765C200029954 /* Scheduler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2652DE6F190765C200029954 /* Scheduler.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		263ED908190714B600CAF5C5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		263ED90A190714B600CAF5C5 /* WebSystemsFinal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WebSystemsFinal; sourceTree = BUILT_PRODUCTS_DIR; };
+		263ED9231907166F00CAF5C5 /* httpServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = httpServer.cpp; path = WebSystemsFinal/httpServer.cpp; sourceTree = "<group>"; };
+		263ED9241907166F00CAF5C5 /* httpServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = httpServer.h; path = WebSystemsFinal/httpServer.h; sourceTree = "<group>"; };
+		263ED9261907187A00CAF5C5 /* security.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = security.cpp; path = WebSystemsFinal/security.cpp; sourceTree = "<group>"; };
+		263ED9271907187A00CAF5C5 /* security.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = security.h; path = WebSystemsFinal/security.h; sourceTree = "<group>"; };
+		26462D5119157C3C004C19C2 /* allofit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = allofit.cpp; path = WebSystemsFinal/allofit.cpp; sourceTree = "<group>"; };
+		26462D5219157C3C004C19C2 /* allofit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = allofit.h; path = WebSystemsFinal/allofit.h; sourceTree = "<group>"; };
+		2652DE6919073B2500029954 /* users.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = users.cpp; path = WebSystemsFinal/users.cpp; sourceTree = "<group>"; };
+		2652DE6A19073B2500029954 /* users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = users.h; path = WebSystemsFinal/users.h; sourceTree = "<group>"; };
+		2652DE6C1907490800029954 /* Logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Logger.cpp; path = WebSystemsFinal/Logger.cpp; sourceTree = "<group>"; };
+		2652DE6D1907490800029954 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logger.h; path = WebSystemsFinal/Logger.h; sourceTree = "<group>"; };
+		2652DE6F190765C200029954 /* Scheduler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scheduler.cpp; path = WebSystemsFinal/Scheduler.cpp; sourceTree = "<group>"; };
+		2652DE70190765C200029954 /* Scheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scheduler.h; path = WebSystemsFinal/Scheduler.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		263ED907190714B600CAF5C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		263ED901190714B600CAF5C5 = {
+			isa = PBXGroup;
+			children = (
+				26462D5119157C3C004C19C2 /* allofit.cpp */,
+				26462D5219157C3C004C19C2 /* allofit.h */,
+				263ED9231907166F00CAF5C5 /* httpServer.cpp */,
+				263ED9241907166F00CAF5C5 /* httpServer.h */,
+				263ED9261907187A00CAF5C5 /* security.cpp */,
+				263ED9271907187A00CAF5C5 /* security.h */,
+				2652DE6919073B2500029954 /* users.cpp */,
+				2652DE6A19073B2500029954 /* users.h */,
+				2652DE6C1907490800029954 /* Logger.cpp */,
+				2652DE6D1907490800029954 /* Logger.h */,
+				2652DE6F190765C200029954 /* Scheduler.cpp */,
+				2652DE70190765C200029954 /* Scheduler.h */,
+				263ED90B190714B600CAF5C5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		263ED90B190714B600CAF5C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				263ED90A190714B600CAF5C5 /* WebSystemsFinal */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		263ED909190714B600CAF5C5 /* WebSystemsFinal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 263ED913190714B600CAF5C5 /* Build configuration list for PBXNativeTarget "WebSystemsFinal" */;
+			buildPhases = (
+				263ED906190714B600CAF5C5 /* Sources */,
+				263ED907190714B600CAF5C5 /* Frameworks */,
+				263ED908190714B600CAF5C5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebSystemsFinal;
+			productName = WebSystemsFinal;
+			productReference = 263ED90A190714B600CAF5C5 /* WebSystemsFinal */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		263ED902190714B600CAF5C5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Lyle Moffitt";
+			};
+			buildConfigurationList = 263ED905190714B600CAF5C5 /* Build configuration list for PBXProject "WebSystemsFinal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 263ED901190714B600CAF5C5;
+			productRefGroup = 263ED90B190714B600CAF5C5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				263ED909190714B600CAF5C5 /* WebSystemsFinal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		263ED906190714B600CAF5C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26462D5319157C3C004C19C2 /* allofit.cpp in Sources */,
+				2652DE6B19073B2500029954 /* users.cpp in Sources */,
+				2652DE681907394300029954 /* httpServer.cpp in Sources */,
+				263ED9281907187A00CAF5C5 /* security.cpp in Sources */,
+				2652DE6E1907490800029954 /* Logger.cpp in Sources */,
+				2652DE71190765C200029954 /* Scheduler.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		263ED911190714B600CAF5C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+					/usr/include,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /usr/include";
+			};
+			name = Debug;
+		};
+		263ED912190714B600CAF5C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+					/usr/include,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /usr/include";
+			};
+			name = Release;
+		};
+		263ED914190714B600CAF5C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /usr/include";
+			};
+			name = Debug;
+		};
+		263ED915190714B600CAF5C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /usr/include";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		263ED905190714B600CAF5C5 /* Build configuration list for PBXProject "WebSystemsFinal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				263ED911190714B600CAF5C5 /* Debug */,
+				263ED912190714B600CAF5C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		263ED913190714B600CAF5C5 /* Build configuration list for PBXNativeTarget "WebSystemsFinal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				263ED914190714B600CAF5C5 /* Debug */,
+				263ED915190714B600CAF5C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 263ED902190714B600CAF5C5 /* Project object */;
+}
