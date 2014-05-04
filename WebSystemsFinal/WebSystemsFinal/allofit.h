@@ -50,7 +50,7 @@ class handler
     // log size of intro file and signup file 
     // sum should be updated in box in scheduler
     // create send time in box time in scheduler
-    void send_hello();
+    std::string send_hello();
     // while{
     //     sends form asking what joke they want
     //     get joke from file handler
@@ -60,6 +60,7 @@ class handler
     //     wait user's interval 
     // }
     // until exit
+    void getJoke(std::string usr-pswd);
 };
 
 

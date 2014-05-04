@@ -50,8 +50,11 @@ int file_handler::add_file(std::string filename)
 file& file_handler::get_file(std::string filename) 
 {
     for(auto it = file_map.begin(); it != file_map.end(); ++it )
+    {}
         if(*it.filename == filename)
             return *it;
+    }
+    return nullptr;
     
 }
 
