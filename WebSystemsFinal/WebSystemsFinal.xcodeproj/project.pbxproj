@@ -233,7 +233,7 @@
 			buildSettings = {
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /usr/include";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /usr/include ";
 			};
 			name = Debug;
 		};
@@ -242,7 +242,7 @@
 			buildSettings = {
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /usr/include";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /usr/include ";
 			};
 			name = Release;
 		};
