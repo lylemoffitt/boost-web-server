@@ -20,15 +20,17 @@
 
 struct allofit
 {
-    httpServer  _httpserver;
+    httpServer      _httpserver;
     
-    security    _security;
+    security        _security;
     
-    user_set    _user_set;
+    user_set        _user_set;
     
-    logger      _logger;
+    logger          _logger;
     
-    scheduler   _scheduler;
+    scheduler       _scheduler;
+    
+    file_handler    _file_handler;
     
 };
 
