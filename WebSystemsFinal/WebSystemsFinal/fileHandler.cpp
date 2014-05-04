@@ -2,15 +2,16 @@
 
 using namespace std;
 
-file_handler(allofit &_alloi)
+file_handler::file_handler(allofit &_alloi):_aott(_alloi)
 {
+    
     ifstream infile;
     infile.open(path + "/index");
     string line;
     
     while(infile.good())
     {
-        line << infile;
+        infile >> line;
         add_file(line);
     }
     infile.close();    
@@ -18,13 +19,12 @@ file_handler(allofit &_alloi)
 
 int file_handler::add_file(std::string filename)
 {
-    iterator it;
-    file &newfile = new file_handler(); 
+    file &newfile = *new file();
     time_t rawtime;
     struct tm * timeinfo;
     
     //check to see if file is in map
-    it = file_map.find(filename);
+    auto it = file_map.find(filename);
     if(it != file_map.end())
         return -1; //if file already exists
     
@@ -33,38 +33,35 @@ int file_handler::add_file(std::string filename)
     if(infile.bad())
         return -2; //if file is bad
     
-    size_t file_size =  infile.seekg(0, infile.end);
+    infile.seekg(0, infile.end);
+    size_t file_size = infile.tellg();
+    
     newfile.file_size = file_size;
     
     time ( &rawtime );
 	timeinfo = localtime ( &rawtime );
-    newfile.access_time = asctime (timeinfo);
+    newfile.access_time = atoi(asctime (timeinfo));
     
     newfile.filename = filename;
     
-    file_map.insert(filename, newfile);
+    file_map.insert({filename, newfile});
     infile.close();
     return 1;
 }
 
 file& file_handler::get_file(std::string filename) 
 {
-    for(auto it = file_map.begin(); it != file_map.end(); ++it )
-    {}
-        if(*it.filename == filename)
-            return *it;
-    }
-    return nullptr;
-    
+    unordered_map<string,file>::iterator it = file_map.find (filename);
+    return it->second;
 }
 
 vector<char> file::readfile()
 {
     ifstream infile;
-    infile.open(path + "/" + this.filename);
+    infile.open(path + "/" + this->filename);
     
     vector<char> joke;
-    joke.reserve(this.file_size);
+    joke.reserve(this->file_size);
     char letter;
     while(infile.good())
     {
@@ -73,7 +70,7 @@ vector<char> file::readfile()
     }
     infile.close();
     
-    _logger.log("OpenFile", 1, "\t\tFile: " + this.filename + "opened");
+    _aott._logger.log("OpenFile", 1, "\t\tFile: " + this->filename + "opened");
     
     
     return joke;

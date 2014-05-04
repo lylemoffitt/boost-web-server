@@ -15,6 +15,7 @@
 #include <functional>
 
 #include "allofit.h"
+#include "users.h"
 
 
 class security

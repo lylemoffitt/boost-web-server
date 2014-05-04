@@ -14,8 +14,17 @@
 #include <boost/circular_buffer.hpp>
 #include <queue>
 #include <vector>
+#include <functional>
+
+#include "httpServer.h"
+#include "security.h"
+#include "users.h"
+#include "Logger.h"
+//#include "Scheduler.h"
+#include "fileHandler.h"
+
 #include "allofit.h"
-//point in times
+//point in time
 #define timestamp size_t
 #define thepresent
 
@@ -40,12 +49,14 @@ class scheduler
 {
     boost::circular_buffer<box> ringBuffer;
     double highest, lowest, median;
+    allofit     &       _aott;
     
-    public:
-        scheduler();
-        void add_to_sched(box &customer);
-        box take_next();
-        void update();
+public:
+    scheduler(allofit &_alloi):_aott(_alloi){}
+    
+    void add_to_sched(box &customer);
+    box take_next();
+    void update();
        
 };
 

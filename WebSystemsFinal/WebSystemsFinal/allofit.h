@@ -9,6 +9,9 @@
 #ifndef __WebSystemsFinal__allofit__
 #define __WebSystemsFinal__allofit__
 
+#include <iostream>
+#include <string> 
+
 
 #include "httpServer.h"
 #include "security.h"
@@ -19,11 +22,13 @@
 
 
 
-struct allofit
+
+class allofit
 {
-    httpServer      _httpserver;
+public:
+    httpServer      _httpserver; //tcp server
     
-    security        _security;
+    security        _security (*this);
     
     user_set        _user_set;
     
@@ -31,14 +36,17 @@ struct allofit
     
     scheduler       _scheduler;
     
-    file_handler    _file_handler;
+    file_handler    _file_handler (*this);
     
 };
 
-
 class handler
 {
-    public:
+     allofit & _aott;
+    
+public:
+    handler(allofit & _all):_aott(_all){}
+    
     user* member;
     tcpConnection* tcp;
     // gets intro file fro file handler
@@ -61,7 +69,9 @@ class handler
     //     wait user's interval 
     // }
     // until exit
-    void getJoke(std::string usr-pswd);
+    void getJoke(std::string usr_pswd);
+    
+    
 };
 
 

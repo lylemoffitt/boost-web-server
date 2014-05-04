@@ -19,7 +19,7 @@ void    user::set_prio(double val)
     priority = val;
 }
 
-bool user::authenticate(std::string u_name, std::string u_pswd)
+bool user::authenticate(std::string u_name, std::string u_pswd) const
 {
     return (u_name == username  &&  str_hasher(u_pswd)==pswd_hash);
 }

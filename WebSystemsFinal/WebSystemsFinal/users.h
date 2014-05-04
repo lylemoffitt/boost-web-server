@@ -57,10 +57,7 @@ public:
     }*/
     
     // check that login matches
-    bool authenticate(std::string u_name, std::string u_pswd);
-    /*{
-        return (u_name == username  &&  str_hasher(u_pswd)==pswd_hash);
-    }*/
+    bool authenticate(std::string u_name, std::string u_pswd) const;
     
     double  get_prio();
     
@@ -90,6 +87,11 @@ struct user_set
 {
     std::unordered_set< user > id_table;
     
+//    std::unordered_set< user >::iterator
+//    find_by_usrname(std::string name) const
+//    {
+//        return id_table.find( str_hasher(name) );
+//    }
     
     void add_user(user & u_ref)
     {

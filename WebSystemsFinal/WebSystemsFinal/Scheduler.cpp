@@ -7,14 +7,8 @@
 //
 
 #include "Scheduler.h"
-#include "allofit.h"
 
 using namespace std;
-
-scheduler::scheduler()
-{
-    
-}
 
 void scheduler::add_to_sched(box &customer)
 {
@@ -32,6 +26,10 @@ box scheduler::take_next()
 void scheduler::update()
 {
     box customer;
+    file joke;
+    time_t rawtime;
+    struct tm * timeinfo;
+    
     customer = ringBuffer.front();
     ringBuffer.pop_front();
     if(customer.tcp->done())
@@ -39,29 +37,42 @@ void scheduler::update()
         delete &customer;
         return;
     }
-    customer.calcInterval();
+
+    joke = _aott._file_handler.get_file(customer.filename);
     
+    customer. data_sum += joke.file_size;
+    
+    time ( &rawtime );
+	timeinfo = localtime ( &rawtime );
+    joke.access_time = atoi(asctime (timeinfo));
+    
+    customer.age_time += (joke.access_time - customer.time_point);
+    
+    customer.calcInterval();
     
 }
 
 void box::calcInterval()
 {
-    size_t data;
-    size_t time; 
-    
-    for (auto it = _file_handler.file_map.begin();
-            it != _file_handler.file_map.end(); it++)
-    {
-        if(_file_handler.filename == filename)    
-            data = _file_handler.file_size;
-    }
-    
-    interval = data/time;
+    interval = data_sum/age_time;
+    usleep(interval);
 }
 
 
-
-
+/*
+ size_t data;
+ size_t time;
+ 
+ for (auto it = _file_handler.file_map.begin();
+ it != _file_handler.file_map.end(); it++)
+ {
+ if(_file_handler.filename == filename)
+ {
+ data = _file_handler.data_sum;
+ time = _file_handler.age_time;
+ }
+ }
+ */
 
 
 

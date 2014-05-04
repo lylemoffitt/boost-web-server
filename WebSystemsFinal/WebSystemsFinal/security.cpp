@@ -12,14 +12,16 @@ using namespace std;
 
 bool security::chk_id(string usrnm, string pswd)
 {
-    for (auto i = _aott._user_set.id_table.begin(); 
-         i != _aott._user_set.id_table.end(); i++) 
-    {
-        if(i->authenticate(usrnm, pswd))
-            return true;
-    }
-    _aott._security.report_fake(usrnm, pswd);
-    return false;
+    
+    user obj(usrnm, pswd);
+    
+    auto it = _aott._user_set.id_table.find(obj);
+    
+    if(it == _aott._user_set.id_table.end())
+        return false;
+    
+    return (*it).authenticate(usrnm, pswd);
+    
 }
     
 
@@ -27,6 +29,7 @@ user security::mk_user(string usrnm, string pswd)
 {
     auto obj =  new user(usrnm, pswd) ;
     _aott._user_set.add_user(*obj);
+    return *obj;
 }
     
 void security::report_fake(string usrnm, string pswd)
