@@ -9,7 +9,7 @@
 #include "users.h"
 
 
-double  user::get_prio();
+double  user::get_prio()
 {
     return priority;
 }

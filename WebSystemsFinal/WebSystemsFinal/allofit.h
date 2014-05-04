@@ -15,6 +15,7 @@
 #include "users.h"
 #include "Logger.h"
 #include "Scheduler.h"
+#include "fileHandler.h"
 
 
 

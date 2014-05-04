@@ -10,7 +10,7 @@
 std::string handler::send_hello()
 {
     file displayFile;
-    string usr-pswd, usr, pswd;
+    std::string usr-pswd, usr, pswd;
     
     displayFile = _file_handler.get_file("intro.md");
     TCP.writeData();

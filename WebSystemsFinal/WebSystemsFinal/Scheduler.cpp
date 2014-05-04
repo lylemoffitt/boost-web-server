@@ -7,6 +7,7 @@
 //
 
 #include "Scheduler.h"
+#include "allofit.h"
 
 using namespace std;
 
@@ -18,21 +19,24 @@ scheduler::scheduler()
 void scheduler::add_to_sched(box &customer)
 {
     customer.calcInterval();
-    ringBuffer.push(customer);    
+    ringBuffer.push_back(customer);
 }        
 
-Box scheduler::take_next()
+box scheduler::take_next()
 {
-    return ringBuffer.pop_front();
+    box customer = ringBuffer.front();
+    ringBuffer.pop_front();
+    return customer;
 }    
 
 void scheduler::update()
 {
     box customer;
-    customer = ringBuffer.pop_front();
+    customer = ringBuffer.front();
+    ringBuffer.pop_front();
     if(customer.tcp->done())
     {   
-        delete customer;
+        delete &customer;
         return;
     }
     customer.calcInterval();
@@ -54,3 +58,10 @@ void box::calcInterval()
     
     interval = data/time;
 }
+
+
+
+
+
+
+
