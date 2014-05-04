@@ -21,10 +21,24 @@ void scheduler::add_to_sched(box &customer)
     ringBuffer.push(customer);    
 }        
 
-Box* scheduler::take_next()
+Box scheduler::take_next()
 {
     return ringBuffer.pop_front();
 }    
+
+void scheduler::update()
+{
+    box customer;
+    customer = ringBuffer.pop_front();
+    if(customer.tcp->done())
+    {   
+        delete customer;
+        return;
+    }
+    customer.calcInterval();
+    
+    
+}
 
 void box::calcInterval()
 {

@@ -39,7 +39,7 @@ class handler
 {
     public:
     user* member;
-    TCP* tcp;
+    tcpConnection* tcp;
     // gets intro file fro file handler
     // passes file through TCP
     // gets response (usrnm and pswd)

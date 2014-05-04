@@ -15,27 +15,36 @@
 #include <queue>
 #include <vector>
 #include "allofit.h"
+//point in times
+#define timestamp
+#define thepresent
 
 
 class scheduler
 {
     boost::circular_buffer<box> ringBuffer;
+    double highest, lowest, median;
     
     public:
         scheduler();
         void add_to_sched(box &customer);
-        Box* take_next();
+        Box take_next();
+        void update();
        
 };
 
 
 class box
 {
-    user* to_user;
-    size_t interval;
-    std::string filename;
-    size_t sum;
-    public:
+     public:
+     user* to_user;
+     double interval;
+     std::string filename;
+     size_t data_sum;
+     size_t age_time;
+     timestamp time_point;
+     tcpConnection* tcp;
+   
         void calcInterval();
         size_t send_time(){return interval}
     
