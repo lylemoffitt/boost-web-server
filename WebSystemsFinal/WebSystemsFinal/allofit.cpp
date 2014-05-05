@@ -19,8 +19,9 @@ allofit::send_hello()
     string usr_pswd, usr, pswd;
     
     displayFile = _file_handler.get_file("intro.md");
-    // TCP.writeData();
-    usr_pswd = TCP.getData();
+    // *** functions to come *** //
+    tcp->writeData();
+    usr_pswd = tcp->getData();
     
     size_t newline;
     newline = usr_pswd.find("\n");
@@ -72,56 +73,66 @@ allofit::getJoke(std::string usr_pswd)
             break;
     }
 }
+/*
+void box::serviceLoop()
+{
+    while(tcp->isBusy());
+    
+    string theFile = tcp->getRequest();
+ 
+}*/
 
 void 
 allofit::add_to_sched(box &customer)
 {
-    customer.calcInterval();
-    ringBuffer.push_back(customer);
+    ringBuffer.insert(make_pair(customer.to_user->username,customer));
 }        
-
+/*
 box 
 allofit::take_next()
 {
-    box customer = ringBuffer.front();
-    ringBuffer.pop_front();
+    auto customer = ringBuffer.begin();
+    
     return customer;
 }    
-
+*/
 void 
-allofit::update()
+allofit::update(std::string usr)
 {
-    box customer;
     file* joke;
-    time_t rawtime;
-    struct tm * timeinfo;
     
-    customer = ringBuffer.front();
-    ringBuffer.pop_front();
-    if(customer.tcp->done())
+    while(ringBuffer[usr].tcp->isBusy());
+    
+    //auto customer = ringBuffer.begin();
+    if(ringBuffer[usr].tcp->done())
     {   
-        delete &customer;
+        ringBuffer.erase(usr);
         return;
     }
     
-    joke = _file_handler.get_file(customer.filename);
+    joke = _file_handler.get_file(ringBuffer[usr].filename);
     //check for nullptr
-    customer. data_sum += joke->file_size;
     
-    time ( &rawtime );
-	timeinfo = localtime ( &rawtime );
-    joke->access_time = atoi(asctime (timeinfo));
+    ringBuffer[usr].data_sum += joke->file_size;
     
-    customer.age_time += (joke->access_time - customer.time_point);
+    if(ringBuffer[usr].data_sum < lowest)
+        lowest = ringBuffer[usr].data_sum;
+    if(ringBuffer[usr].data_sum > highest)
+        highest = ringBuffer[usr].data_sum;
+    if(lowest != highest)
+        ratio = (ringBuffer[usr].data_sum - lowest)/(highest - ringBuffer[usr].data_sum);
+    else
+        ratio = 0;
     
-    customer.calcInterval();
+    //ringBuffer.at("").calcInterval();
     
 }
 
 void 
 box::calcInterval()
 {
-    interval = data_sum/age_time;
+    
+    interval = 0;
     usleep(interval);
 }
 

@@ -41,7 +41,7 @@ class user
     friend          user_set;
     
 public:
-    //Ststic information
+    //Static information
     const 
     std::string     username;
     const

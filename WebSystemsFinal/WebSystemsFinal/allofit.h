@@ -39,20 +39,19 @@ class logger;
 
 
 
-class box
+class box : public file_handler
 {
 public:
     user*       to_user;
     double      interval;
     std::string filename;
     size_t      data_sum;
-    size_t      age_time;
-    timestamp   time_point;
     tcpConnection* tcp;
-    
+    //allofit* _aott;
     void calcInterval();
     size_t send_time(){return interval;}
-    
+    box(/*allofit* _all*/)/*:_aott(_all)*/{user = nullptr; tcp = nullptr;}
+    void serviceLoop();
 };
 
 
@@ -72,19 +71,20 @@ public:
  
     
     
-    boost::circular_buffer<box> ringBuffer;
-    double highest, lowest, median;
+    std::unordered_map<std::string, box> ringBuffer;
+    double highest, lowest, median, ratio;
     
 public:
 
     
     void add_to_sched(box &customer);
-    box take_next();
-    void update();
+    // *** don't need this, just index the map with the username *** //
+    //box take_next();
+    void update(std::string usr);
     
 
     
-    user* member;
+    //user* member;
     tcpConnection* tcp;
     // gets intro file fro file handler
     // passes file through TCP

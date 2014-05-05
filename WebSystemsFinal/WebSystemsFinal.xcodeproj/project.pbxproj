@@ -31,16 +31,12 @@
 		263ED90A190714B600CAF5C5 /* WebSystemsFinal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WebSystemsFinal; sourceTree = BUILT_PRODUCTS_DIR; };
 		263ED9231907166F00CAF5C5 /* httpServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = httpServer.cpp; path = WebSystemsFinal/httpServer.cpp; sourceTree = "<group>"; };
 		263ED9241907166F00CAF5C5 /* httpServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = httpServer.h; path = WebSystemsFinal/httpServer.h; sourceTree = "<group>"; };
-		263ED9261907187A00CAF5C5 /* security.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = security.cpp; path = WebSystemsFinal/security.cpp; sourceTree = "<group>"; };
-		263ED9271907187A00CAF5C5 /* security.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = security.h; path = WebSystemsFinal/security.h; sourceTree = "<group>"; };
 		26462D5119157C3C004C19C2 /* allofit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = allofit.cpp; path = WebSystemsFinal/allofit.cpp; sourceTree = "<group>"; };
 		26462D5219157C3C004C19C2 /* allofit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = allofit.h; path = WebSystemsFinal/allofit.h; sourceTree = "<group>"; };
 		2652DE6919073B2500029954 /* users.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = users.cpp; path = WebSystemsFinal/users.cpp; sourceTree = "<group>"; };
 		2652DE6A19073B2500029954 /* users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = users.h; path = WebSystemsFinal/users.h; sourceTree = "<group>"; };
 		2652DE6C1907490800029954 /* Logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Logger.cpp; path = WebSystemsFinal/Logger.cpp; sourceTree = "<group>"; };
 		2652DE6D1907490800029954 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logger.h; path = WebSystemsFinal/Logger.h; sourceTree = "<group>"; };
-		2652DE6F190765C200029954 /* Scheduler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scheduler.cpp; path = WebSystemsFinal/Scheduler.cpp; sourceTree = "<group>"; };
-		2652DE70190765C200029954 /* Scheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scheduler.h; path = WebSystemsFinal/Scheduler.h; sourceTree = "<group>"; };
 		26CE4E1119169EAD009DD720 /* fileHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fileHandler.cpp; path = WebSystemsFinal/fileHandler.cpp; sourceTree = "<group>"; };
 		26CE4E1219169EAD009DD720 /* fileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fileHandler.h; path = WebSystemsFinal/fileHandler.h; sourceTree = "<group>"; };
 		26CE4E141916DC7E009DD720 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = WebSystemsFinal/main.cpp; sourceTree = "<group>"; };
@@ -71,10 +67,6 @@
 				26462D5219157C3C004C19C2 /* allofit.h */,
 				263ED9231907166F00CAF5C5 /* httpServer.cpp */,
 				263ED9241907166F00CAF5C5 /* httpServer.h */,
-				263ED9261907187A00CAF5C5 /* security.cpp */,
-				263ED9271907187A00CAF5C5 /* security.h */,
-				2652DE6F190765C200029954 /* Scheduler.cpp */,
-				2652DE70190765C200029954 /* Scheduler.h */,
 				263ED90B190714B600CAF5C5 /* Products */,
 			);
 			sourceTree = "<group>";
