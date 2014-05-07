@@ -85,9 +85,9 @@ struct std::hash<user>
 
 struct user_set
 {
-    std::unordered_set< user > id_table;
+    std::unordered_set< user* > id_table;
     
-    void add_user(user & u_ref)
+    void add_user(user * u_ref)
     {
         id_table.insert( u_ref );
     }

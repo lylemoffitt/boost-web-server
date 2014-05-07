@@ -5,7 +5,8 @@
 //  Created by Lyle Moffitt on 4/22/14.
 //  Copyright (c) 2014 Lyle Moffitt. All rights reserved.
 //
-
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
 #include "Logger.h"
 #define SIZE 1000
 using namespace std;
@@ -21,8 +22,10 @@ void logger::log(std::string whom, int level, std::string info)
 	outfile.open(Level , ofstream::app);
 	
 	time ( &rawtime );
-	timeinfo = localtime ( &rawtime ); 
+	string time = ctime(&rawtime);
+    time.at(time.size() - 1) = '\0';
 	
-	outfile << asctime (timeinfo) + info << endl;
+	outfile << time + info << endl;
 	outfile.close();
 }
+#endif

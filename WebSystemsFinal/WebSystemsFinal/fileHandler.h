@@ -16,6 +16,14 @@
  
 static const std::string path;
 
+struct fileInfo
+{
+    char* data;
+    size_t size;
+};
+
+
+
 class file
 {
 public:
@@ -27,20 +35,18 @@ public:
     std::vector<char> readfile();
     
     file(){file_size = 0; filename = ""; access_time = 0;}
-    
-    
 };
 
 class file_handler
 {
     std::unordered_map<std::string,file> file_map;
-//    allofit     &       _aott;
+    fileInfo _fileInfo;
     
 public:
 //    file_handler(allofit &_alloi);
 
     file_handler();
-    
+    fileInfo save_file(std::string filename);
     int add_file(std::string filename);
     file* get_file(std::string filename);
         

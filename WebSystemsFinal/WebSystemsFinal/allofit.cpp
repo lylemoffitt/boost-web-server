@@ -73,29 +73,14 @@ allofit::getJoke(std::string usr_pswd)
             break;
     }
 }
-/*
-void box::serviceLoop()
-{
-    while(tcp->isBusy());
-    
-    string theFile = tcp->getRequest();
- 
-}*/
+
 
 void 
 allofit::add_to_sched(box &customer)
 {
     ringBuffer.insert(make_pair(customer.to_user->username,customer));
 }        
-/*
-box 
-allofit::take_next()
-{
-    auto customer = ringBuffer.begin();
-    
-    return customer;
-}    
-*/
+
 void 
 allofit::update(std::string usr)
 {
@@ -127,7 +112,7 @@ allofit::update(std::string usr)
     //ringBuffer.at("").calcInterval();
     
 }
-
+///////// *** no purpose for this yet *** /////////
 void 
 box::calcInterval()
 {
@@ -143,14 +128,14 @@ bool
 allofit::chk_id(string usrnm, string pswd)
 {
     
-    user obj(usrnm, pswd);
+    user* obj = new user(usrnm, pswd);
     
     auto it = _user_set.id_table.find(obj);
     
     if(it == _user_set.id_table.end())
         return false;
     
-    return (*it).authenticate(usrnm, pswd);
+    return (*it)->authenticate(usrnm, pswd);
     
 }
 
@@ -158,8 +143,8 @@ allofit::chk_id(string usrnm, string pswd)
 user 
 allofit::mk_user(string usrnm, string pswd)
 {
-    auto obj =  new user(usrnm, pswd) ;
-    _user_set.add_user(*obj);
+    auto *obj =  new user(usrnm, pswd) ;
+    _user_set.add_user(obj);
     return *obj;
 }
 

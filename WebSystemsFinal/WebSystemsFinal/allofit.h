@@ -50,7 +50,7 @@ public:
     //allofit* _aott;
     void calcInterval();
     size_t send_time(){return interval;}
-    box(/*allofit* _all*/)/*:_aott(_all)*/{user = nullptr; tcp = nullptr;}
+    box(){user = new user(/*needs usr & pswd*/) nullptr; tcp = nullptr;}
     void serviceLoop();
 };
 
