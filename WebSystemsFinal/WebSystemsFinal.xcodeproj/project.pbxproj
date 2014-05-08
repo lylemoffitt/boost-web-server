@@ -13,6 +13,24 @@
 		2652DE6E1907490800029954 /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2652DE6C1907490800029954 /* Logger.cpp */; };
 		26CE4E1319169EAD009DD720 /* fileHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26CE4E1119169EAD009DD720 /* fileHandler.cpp */; };
 		26CE4E151916DC7E009DD720 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26CE4E141916DC7E009DD720 /* main.cpp */; };
+		98C6D8F8191C084900F43724 /* allofit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D8E7191C084900F43724 /* allofit.cpp */; };
+		98C6D8F9191C084900F43724 /* fileHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D8E9191C084900F43724 /* fileHandler.cpp */; };
+		98C6D8FA191C084900F43724 /* httpServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D8EB191C084900F43724 /* httpServer.cpp */; };
+		98C6D8FB191C084900F43724 /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D8ED191C084900F43724 /* Logger.cpp */; };
+		98C6D8FC191C084900F43724 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D8F0191C084900F43724 /* main.cpp */; };
+		98C6D8FD191C084900F43724 /* Scheduler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D8F1191C084900F43724 /* Scheduler.cpp */; };
+		98C6D8FE191C084900F43724 /* security.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D8F3191C084900F43724 /* security.cpp */; };
+		98C6D8FF191C084900F43724 /* users.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D8F5191C084900F43724 /* users.cpp */; };
+		98C6D900191C084900F43724 /* WebSystemsFinal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D8F7191C084900F43724 /* WebSystemsFinal.cpp */; };
+		98C6D913191C088600F43724 /* allofit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D902191C088600F43724 /* allofit.cpp */; };
+		98C6D914191C088600F43724 /* fileHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D904191C088600F43724 /* fileHandler.cpp */; };
+		98C6D915191C088600F43724 /* httpServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D906191C088600F43724 /* httpServer.cpp */; };
+		98C6D916191C088600F43724 /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D908191C088600F43724 /* Logger.cpp */; };
+		98C6D917191C088600F43724 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D90B191C088600F43724 /* main.cpp */; };
+		98C6D918191C088600F43724 /* Scheduler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D90C191C088600F43724 /* Scheduler.cpp */; };
+		98C6D919191C088600F43724 /* security.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D90E191C088600F43724 /* security.cpp */; };
+		98C6D91A191C088600F43724 /* users.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D910191C088600F43724 /* users.cpp */; };
+		98C6D91B191C088600F43724 /* WebSystemsFinal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C6D912191C088600F43724 /* WebSystemsFinal.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +58,40 @@
 		26CE4E1119169EAD009DD720 /* fileHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fileHandler.cpp; path = WebSystemsFinal/fileHandler.cpp; sourceTree = "<group>"; };
 		26CE4E1219169EAD009DD720 /* fileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fileHandler.h; path = WebSystemsFinal/fileHandler.h; sourceTree = "<group>"; };
 		26CE4E141916DC7E009DD720 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = WebSystemsFinal/main.cpp; sourceTree = "<group>"; };
+		98C6D8E7191C084900F43724 /* allofit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = allofit.cpp; sourceTree = "<group>"; };
+		98C6D8E8191C084900F43724 /* allofit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = allofit.h; sourceTree = "<group>"; };
+		98C6D8E9191C084900F43724 /* fileHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fileHandler.cpp; sourceTree = "<group>"; };
+		98C6D8EA191C084900F43724 /* fileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileHandler.h; sourceTree = "<group>"; };
+		98C6D8EB191C084900F43724 /* httpServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = httpServer.cpp; sourceTree = "<group>"; };
+		98C6D8EC191C084900F43724 /* httpServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = httpServer.h; sourceTree = "<group>"; };
+		98C6D8ED191C084900F43724 /* Logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Logger.cpp; sourceTree = "<group>"; };
+		98C6D8EE191C084900F43724 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
+		98C6D8EF191C084900F43724 /* login.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = login.html; path = WebSystemsFinal/login.html; sourceTree = "<group>"; };
+		98C6D8F0191C084900F43724 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		98C6D8F1191C084900F43724 /* Scheduler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scheduler.cpp; sourceTree = "<group>"; };
+		98C6D8F2191C084900F43724 /* Scheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scheduler.h; sourceTree = "<group>"; };
+		98C6D8F3191C084900F43724 /* security.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = security.cpp; sourceTree = "<group>"; };
+		98C6D8F4191C084900F43724 /* security.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = security.h; sourceTree = "<group>"; };
+		98C6D8F5191C084900F43724 /* users.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = users.cpp; sourceTree = "<group>"; };
+		98C6D8F6191C084900F43724 /* users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = users.h; sourceTree = "<group>"; };
+		98C6D8F7191C084900F43724 /* WebSystemsFinal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WebSystemsFinal.cpp; sourceTree = "<group>"; };
+		98C6D902191C088600F43724 /* allofit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = allofit.cpp; sourceTree = "<group>"; };
+		98C6D903191C088600F43724 /* allofit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = allofit.h; sourceTree = "<group>"; };
+		98C6D904191C088600F43724 /* fileHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fileHandler.cpp; sourceTree = "<group>"; };
+		98C6D905191C088600F43724 /* fileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileHandler.h; sourceTree = "<group>"; };
+		98C6D906191C088600F43724 /* httpServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = httpServer.cpp; sourceTree = "<group>"; };
+		98C6D907191C088600F43724 /* httpServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = httpServer.h; sourceTree = "<group>"; };
+		98C6D908191C088600F43724 /* Logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Logger.cpp; sourceTree = "<group>"; };
+		98C6D909191C088600F43724 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
+		98C6D90A191C088600F43724 /* login.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = login.html; sourceTree = "<group>"; };
+		98C6D90B191C088600F43724 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		98C6D90C191C088600F43724 /* Scheduler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scheduler.cpp; sourceTree = "<group>"; };
+		98C6D90D191C088600F43724 /* Scheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scheduler.h; sourceTree = "<group>"; };
+		98C6D90E191C088600F43724 /* security.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = security.cpp; sourceTree = "<group>"; };
+		98C6D90F191C088600F43724 /* security.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = security.h; sourceTree = "<group>"; };
+		98C6D910191C088600F43724 /* users.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = users.cpp; sourceTree = "<group>"; };
+		98C6D911191C088600F43724 /* users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = users.h; sourceTree = "<group>"; };
+		98C6D912191C088600F43724 /* WebSystemsFinal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WebSystemsFinal.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +110,11 @@
 			children = (
 				26CE4E141916DC7E009DD720 /* main.cpp */,
 				2652DE6919073B2500029954 /* users.cpp */,
+				98C6D8E6191C084900F43724 /* WebSystemsFinal */,
 				2652DE6A19073B2500029954 /* users.h */,
 				2652DE6C1907490800029954 /* Logger.cpp */,
 				2652DE6D1907490800029954 /* Logger.h */,
+				98C6D8EF191C084900F43724 /* login.html */,
 				26CE4E1119169EAD009DD720 /* fileHandler.cpp */,
 				26CE4E1219169EAD009DD720 /* fileHandler.h */,
 				26462D5119157C3C004C19C2 /* allofit.cpp */,
@@ -77,6 +131,54 @@
 				263ED90A190714B600CAF5C5 /* WebSystemsFinal */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		98C6D8E6191C084900F43724 /* WebSystemsFinal */ = {
+			isa = PBXGroup;
+			children = (
+				98C6D901191C088600F43724 /* WebSystemsFinal */,
+				98C6D8E7191C084900F43724 /* allofit.cpp */,
+				98C6D8E8191C084900F43724 /* allofit.h */,
+				98C6D8E9191C084900F43724 /* fileHandler.cpp */,
+				98C6D8EA191C084900F43724 /* fileHandler.h */,
+				98C6D8EB191C084900F43724 /* httpServer.cpp */,
+				98C6D8EC191C084900F43724 /* httpServer.h */,
+				98C6D8ED191C084900F43724 /* Logger.cpp */,
+				98C6D8EE191C084900F43724 /* Logger.h */,
+				98C6D8F0191C084900F43724 /* main.cpp */,
+				98C6D8F1191C084900F43724 /* Scheduler.cpp */,
+				98C6D8F2191C084900F43724 /* Scheduler.h */,
+				98C6D8F3191C084900F43724 /* security.cpp */,
+				98C6D8F4191C084900F43724 /* security.h */,
+				98C6D8F5191C084900F43724 /* users.cpp */,
+				98C6D8F6191C084900F43724 /* users.h */,
+				98C6D8F7191C084900F43724 /* WebSystemsFinal.cpp */,
+			);
+			path = WebSystemsFinal;
+			sourceTree = "<group>";
+		};
+		98C6D901191C088600F43724 /* WebSystemsFinal */ = {
+			isa = PBXGroup;
+			children = (
+				98C6D902191C088600F43724 /* allofit.cpp */,
+				98C6D903191C088600F43724 /* allofit.h */,
+				98C6D904191C088600F43724 /* fileHandler.cpp */,
+				98C6D905191C088600F43724 /* fileHandler.h */,
+				98C6D906191C088600F43724 /* httpServer.cpp */,
+				98C6D907191C088600F43724 /* httpServer.h */,
+				98C6D908191C088600F43724 /* Logger.cpp */,
+				98C6D909191C088600F43724 /* Logger.h */,
+				98C6D90A191C088600F43724 /* login.html */,
+				98C6D90B191C088600F43724 /* main.cpp */,
+				98C6D90C191C088600F43724 /* Scheduler.cpp */,
+				98C6D90D191C088600F43724 /* Scheduler.h */,
+				98C6D90E191C088600F43724 /* security.cpp */,
+				98C6D90F191C088600F43724 /* security.h */,
+				98C6D910191C088600F43724 /* users.cpp */,
+				98C6D911191C088600F43724 /* users.h */,
+				98C6D912191C088600F43724 /* WebSystemsFinal.cpp */,
+			);
+			name = WebSystemsFinal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,11 +233,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				26CE4E151916DC7E009DD720 /* main.cpp in Sources */,
+				98C6D8FE191C084900F43724 /* security.cpp in Sources */,
+				98C6D8FF191C084900F43724 /* users.cpp in Sources */,
+				98C6D900191C084900F43724 /* WebSystemsFinal.cpp in Sources */,
+				98C6D8FD191C084900F43724 /* Scheduler.cpp in Sources */,
+				98C6D8FB191C084900F43724 /* Logger.cpp in Sources */,
+				98C6D8FA191C084900F43724 /* httpServer.cpp in Sources */,
+				98C6D916191C088600F43724 /* Logger.cpp in Sources */,
+				98C6D913191C088600F43724 /* allofit.cpp in Sources */,
 				26462D5319157C3C004C19C2 /* allofit.cpp in Sources */,
+				98C6D8FC191C084900F43724 /* main.cpp in Sources */,
+				98C6D915191C088600F43724 /* httpServer.cpp in Sources */,
+				98C6D91B191C088600F43724 /* WebSystemsFinal.cpp in Sources */,
 				2652DE6B19073B2500029954 /* users.cpp in Sources */,
 				2652DE681907394300029954 /* httpServer.cpp in Sources */,
 				2652DE6E1907490800029954 /* Logger.cpp in Sources */,
+				98C6D919191C088600F43724 /* security.cpp in Sources */,
 				26CE4E1319169EAD009DD720 /* fileHandler.cpp in Sources */,
+				98C6D918191C088600F43724 /* Scheduler.cpp in Sources */,
+				98C6D914191C088600F43724 /* fileHandler.cpp in Sources */,
+				98C6D8F9191C084900F43724 /* fileHandler.cpp in Sources */,
+				98C6D917191C088600F43724 /* main.cpp in Sources */,
+				98C6D8F8191C084900F43724 /* allofit.cpp in Sources */,
+				98C6D91A191C088600F43724 /* users.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
