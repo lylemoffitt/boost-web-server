@@ -86,7 +86,7 @@ allofit::update(std::string usr)
 {
     file* joke;
     
-    while(ringBuffer[usr].tcp->isBusy());
+    while(ringBuffer[usr].tcp->isBusy());//block exec until free
     
     //auto customer = ringBuffer.begin();
     if(ringBuffer[usr].tcp->done())

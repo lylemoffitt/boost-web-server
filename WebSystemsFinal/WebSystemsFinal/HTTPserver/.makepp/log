@@ -1,0 +1,70 @@
+3/usr/local/bin/makepp ./HTTPserver.1 ./connection.cpp ./connection.hpp ./header.hpp ./main.cpp ./mime_types.cpp ./mime_types.hpp ./reply.cpp ./reply.hpp ./request.hpp ./request_handler.cpp ./request_handler.hpp ./request_parser.cpp ./request_parser.hpp ./server.cpp ./server.hpp
+VERSION2.05.14.4darwin-2level
+LOAD_DEFAULT4304235504HTTPserver4304235000/Developer/WorkingProject/HTTPserver
+LOAD_INCL4305463272makepp_builtin_rules.mk4305443776/usr/local/Cellar/makepp/2.0/share/makepp4305462096makepp_default_makefile.mk4305443776
+LOAD_END4305462096
+TRY4305415496HTTPserver.14304235504
+USEdefault rule
+DEPEND4305415496
+UP_TO_DATE4305415496
+TRY4305416168connection.cpp4304235504
+USEdefault rule
+DEPEND4305416168
+UP_TO_DATE4305416168
+TRY4305416648connection.hpp4304235504
+USEdefault rule
+DEPEND4305416648
+UP_TO_DATE4305416648
+TRY4305416696header.hpp4304235504
+USEdefault rule
+DEPEND4305416696
+UP_TO_DATE4305416696
+TRY4305416744main.cpp4304235504
+USEdefault rule
+DEPEND4305416744
+UP_TO_DATE4305416744
+TRY4305416792mime_types.cpp4304235504
+USEdefault rule
+DEPEND4305416792
+UP_TO_DATE4305416792
+TRY4305416864mime_types.hpp4304235504
+USEdefault rule
+DEPEND4305416864
+UP_TO_DATE4305416864
+TRY4305416936reply.cpp4304235504
+USEdefault rule
+DEPEND4305416936
+UP_TO_DATE4305416936
+TRY4305417152reply.hpp4304235504
+USEdefault rule
+DEPEND4305417152
+UP_TO_DATE4305417152
+TRY4305417200request.hpp4304235504
+USEdefault rule
+DEPEND4305417200
+UP_TO_DATE4305417200
+TRY4305417248request_handler.cpp4304235504
+USEdefault rule
+DEPEND4305417248
+UP_TO_DATE4305417248
+TRY4305417296request_handler.hpp4304235504
+USEdefault rule
+DEPEND4305417296
+UP_TO_DATE4305417296
+TRY4305417392request_parser.cpp4304235504
+USEdefault rule
+DEPEND4305417392
+UP_TO_DATE4305417392
+TRY4305417464request_parser.hpp4304235504
+USEdefault rule
+DEPEND4305417464
+UP_TO_DATE4305417464
+TRY4305417536server.cpp4304235504
+USEdefault rule
+DEPEND4305417536
+UP_TO_DATE4305417536
+TRY4305417752server.hpp4304235504
+USEdefault rule
+DEPEND4305417752
+UP_TO_DATE4305417752
+N_FILES000

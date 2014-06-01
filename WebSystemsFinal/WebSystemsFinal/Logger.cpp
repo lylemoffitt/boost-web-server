@@ -7,8 +7,12 @@
 //
 #ifdef _MSC_VER
 #define _CRT_SECURE_NO_WARNINGS
-#include "Logger.h"
+#endif
 #define SIZE 1000
+
+
+#include "Logger.h"
+
 using namespace std;
 
 void logger::log(std::string whom, int level, std::string info)
@@ -28,4 +32,3 @@ void logger::log(std::string whom, int level, std::string info)
 	outfile << time + info << endl;
 	outfile.close();
 }
-#endif

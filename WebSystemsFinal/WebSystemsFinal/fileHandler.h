@@ -16,10 +16,10 @@
  
 static const std::string path;
 
-struct fileInfo
+struct simple_str
 {
-    char* data;
-    size_t size;
+    char*       data;
+    size_t      size;
 };
 
 
@@ -27,29 +27,35 @@ struct fileInfo
 class file
 {
 public:
-    size_t          file_size;
-    std::string     filename;
-    size_t          access_time;
-    //passes open file stream object
-    //log when file was opened
-    std::vector<char> readfile();
+    size_t                  file_size;
+    std::string             filename;
+    size_t                  access_time;
+    
+    std::string             file_text;
     
     file(){file_size = 0; filename = ""; access_time = 0;}
 };
 
+
+
 class file_handler
 {
-    std::unordered_map<std::string,file> file_map;
-    fileInfo _fileInfo;
+    std::unordered_map<std::string,file*>    file_map;
     
 public:
 //    file_handler(allofit &_alloi);
 
     file_handler();
-    fileInfo save_file(std::string filename);
-    int add_file(std::string filename);
-    file* get_file(std::string filename);
+    
+    std::string 
+        read_file(std::string   filename);
+    int 
+        add_file(std::string    filename);
+    file* 
+        get_file(std::string    filename);
         
 };
 
 #endif
+
+

@@ -27,41 +27,48 @@ class logger;
 
 #include "Logger.h"
 #include "users.h"
-
-
-
-#include "httpServer.h"
-
-
-//#include "security.h"
-//#include "Scheduler.h"
 #include "fileHandler.h"
 
+struct connection_ptr
+{
+    bool done(){return true;}
+    bool isBusy(){return false;}
+    void writeData(){return;}
+    std::string getData(){return "";}
+};
 
+//#include "HTTPserver/connection.h"
 
 class box : public file_handler
 {
 public:
-    user*       to_user;
-    double      interval;
-    std::string filename;
-    size_t      data_sum;
-    tcpConnection* tcp;
-    //allofit* _aott;
-    void calcInterval();
-    size_t send_time(){return interval;}
-    box(){user = new user(/*needs usr & pswd*/) nullptr; tcp = nullptr;}
-    void serviceLoop();
+    user*                   to_user;
+    double                  interval;
+    std::string             filename;
+    size_t                  data_sum;
+    connection_ptr*           tcp;
+    //allofit*              _aott;
+    void 
+        calcInterval();
+    size_t 
+        send_time(){return interval;}
+    void 
+        serviceLoop();
+    box():to_user(nullptr),tcp( nullptr)
+    {}
+    box(user & usr_ref):to_user(&usr_ref)
+    {}
+    
 };
 
 
 class allofit
 {
 public:
-    allofit(): _scheduler(*this),_file_handler (*this)
+    allofit()//: _file_handler (*this)
     {}
     
-    tcpServer      _httpserver; //tcp server
+//    tcpServer      _httpserver; //tcp server
         
     user_set        _user_set;
     
@@ -85,7 +92,7 @@ public:
 
     
     //user* member;
-    tcpConnection* tcp;
+    connection_ptr*             tcp;
     // gets intro file fro file handler
     // passes file through TCP
     // gets response (usrnm and pswd)
